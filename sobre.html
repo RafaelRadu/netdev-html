@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre — NetDev.systems</title>
+    <meta
+      name="description"
+      content="A história de 30 anos da NetDev, desde 1996, construindo sistemas de missão crítica para os maiores nomes do Brasil."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&family=IBM+Plex+Mono:wght@300;400;500&family=Barlow:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { corePlugins: { preflight: false } };
+    </script>
+  </head>
+  <body>
+    <!-- ═══ NAV ═══ -->
+    <nav id="main-nav">
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html"
+          >&lt; netDev<em>.</em>systems /&gt;</a
+        >
+        <div class="nav-right">
+          <a class="nav-link" href="cases.html">Cases</a>
+          <a class="nav-link" href="index.html#geo">Geo &amp; Mapas</a>
+          <a class="nav-link" href="index.html#clientes">Clientes</a>
+          <a class="nav-link" href="servicos.html">Serviços</a>
+          <button class="nav-link nav-tron-btn tron-trigger">🎮 Tron</button>
+          <a class="nav-cta" href="contato.html">Falar com Especialista →</a>
+          <button class="nav-hamburger" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-mobile-menu">
+      <a class="nav-mobile-link" href="index.html">Home</a>
+      <a class="nav-mobile-link" href="sobre.html">Sobre</a>
+      <a class="nav-mobile-link" href="cases.html">Cases</a>
+      <a class="nav-mobile-link" href="servicos.html">Serviços</a>
+      <a class="nav-mobile-link" href="contato.html">Contato</a>
+      <button class="nav-mobile-link tron-trigger">🎮 Tron Game</button>
+      <!-- Mobile Theme Controls -->
+      <div class="nav-mobile-controls">
+        <div class="nav-mobile-ctrl-row">
+          <span class="nav-mobile-ctrl-label">Modo Claro</span>
+          <label class="toggle">
+            <input type="checkbox" class="mobile-theme-toggle" />
+            <span class="toggle-track"></span>
+          </label>
+        </div>
+        <div class="nav-mobile-ctrl-row">
+          <span class="nav-mobile-ctrl-label">Cor</span>
+          <div class="ctrl-pink-preview mobile-preview"></div>
+        </div>
+        <div class="nav-mobile-ctrl-row">
+          <input
+            type="range"
+            class="ctrl-slider nav-mobile-slider mobile-color-slider"
+            min="0"
+            max="100"
+            value="50"
+          />
+        </div>
+      </div>
+      <button
+        class="nav-hamburger open"
+        style="position: absolute; top: 1.4rem; right: 1.5rem"
+        aria-label="Fechar menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- ═══ MAIN ═══ -->
+    <main>
+      <!-- PAGE HERO -->
+      <div class="page-hero">
+        <div class="page-hero-eyebrow">Sobre a NetDev</div>
+        <h1 class="page-hero-h1">Trinta Anos<br /><em>Sem Parar.</em></h1>
+        <p class="page-hero-sub">
+          Desde 1996, construímos sistemas que sustentam o que não pode falhar.
+          Bancos, mídia, governo, games — missão crítica é o que fazemos.
+        </p>
+      </div>
+
+      <!-- TIMELINE -->
+      <div class="sobre-timeline">
+        <div class="reveal">
+          <div class="section-eyebrow">Nossa Trajetória</div>
+          <div class="section-h2">30 Anos de<br /><em>Execução Real.</em></div>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal">
+            <div class="timeline-year">1996</div>
+            <div>
+              <div class="timeline-title">Fundação</div>
+              <div class="timeline-desc">
+                NetDev é fundada em Brasília com foco em sistemas para setor
+                público e financeiro. Primeiros projetos para órgãos
+                governamentais do GDF.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item reveal d1">
+            <div class="timeline-year">2002</div>
+            <div>
+              <div class="timeline-title">Expansão para Mídia</div>
+              <div class="timeline-desc">
+                Início da parceria com grandes veículos de comunicação. Sistemas
+                de publicação e gerenciamento de conteúdo para portais de
+                notícias.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item reveal d2">
+            <div class="timeline-year">2008</div>
+            <div>
+              <div class="timeline-title">AdTech &amp; Programática</div>
+              <div class="timeline-desc">
+                Desenvolvimento do motor proprietário de AdTech — Cintia ADS.
+                Gestão de inventário programático para Record TV e Jovem Pan.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-year">2014</div>
+            <div>
+              <div class="timeline-title">Metrópoles — Reengenharia Total</div>
+              <div class="timeline-desc">
+                Projeto de dois anos de reengenharia do maior portal de notícias
+                do Brasil. 65% de redução no load time, 99.9% uptime garantido.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item reveal d1">
+            <div class="timeline-year">2018</div>
+            <div>
+              <div class="timeline-title">Game Dev &amp; Gamificação</div>
+              <div class="timeline-desc">
+                Criação da vertical de Game Dev. SESC DF — 3x de retenção, 76%
+                de aumento no engajamento. Plataforma premiada de gamificação
+                corporativa.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item reveal d2">
+            <div class="timeline-year">2021</div>
+            <div>
+              <div class="timeline-title">GovTech — Agência Brasília</div>
+              <div class="timeline-desc">
+                Plataforma oficial de notícias do GDF. 2M+ usuários diários com
+                alta disponibilidade durante comunicados críticos da pandemia.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item reveal">
+            <div class="timeline-year">2023</div>
+            <div>
+              <div class="timeline-title">AI &amp; Automação</div>
+              <div class="timeline-desc">
+                Expansão para inteligência artificial aplicada. Modelos
+                preditivos, automação de processos e integração de LLMs ao core
+                dos negócios dos clientes.
+              </div>
+            </div>
+          </div>
+          <div class="timeline-item reveal d1">
+            <div class="timeline-year">2026</div>
+            <div>
+              <div class="timeline-title">Hoje</div>
+              <div class="timeline-desc">
+                NetDev continua na vanguarda: sistemas de missão crítica, geo,
+                game dev, e-commerce headless, cybersecurity e staff
+                augmentation de alta senioridade.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VALORES -->
+      <div class="sobre-values">
+        <div class="value-card reveal">
+          <div class="value-n">01</div>
+          <div class="value-title">Engenharia Primeiro</div>
+          <div class="value-desc">
+            Decisões técnicas guiam o negócio. Não entregamos soluções que não
+            resistiriam ao escrutínio de um arquiteto sênior.
+          </div>
+        </div>
+        <div class="value-card reveal d1">
+          <div class="value-n">02</div>
+          <div class="value-title">Resultado Mensurável</div>
+          <div class="value-desc">
+            Cada projeto tem métricas de sucesso definidas antes de começar.
+            Uptime, latência, conversão — números reais, não promessas.
+          </div>
+        </div>
+        <div class="value-card reveal d2">
+          <div class="value-n">03</div>
+          <div class="value-title">Sem Frescura</div>
+          <div class="value-desc">
+            Comunicação direta, sem jargão de consultoria. Se algo não vai
+            funcionar, falamos antes de assinar o contrato.
+          </div>
+        </div>
+        <div class="value-card reveal">
+          <div class="value-n">04</div>
+          <div class="value-title">Senioridade Real</div>
+          <div class="value-desc">
+            Não terceirizamos para júniors. Toda linha de código crítica passa
+            por arquitetos com anos de experiência em produção.
+          </div>
+        </div>
+        <div class="value-card reveal d1">
+          <div class="value-n">05</div>
+          <div class="value-title">Parceria de Longo Prazo</div>
+          <div class="value-desc">
+            Nossos melhores clientes são parceiros há 10+ anos. Construímos
+            relações, não projetos isolados.
+          </div>
+        </div>
+        <div class="value-card reveal d2">
+          <div class="value-n">06</div>
+          <div class="value-title">Inovação Aplicada</div>
+          <div class="value-desc">
+            IA, Geo, Game Dev — não por modismo, mas quando gera ROI real.
+            Testamos antes de recomendar.
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <section id="cta">
+        <div class="cta-bg-txt">NetDev</div>
+        <div class="cta-inner">
+          <div class="reveal">
+            <h2 class="cta-h2">
+              Vamos construir<br />algo que<br /><em>não pode parar?</em>
+            </h2>
+            <p class="cta-sub">
+              30 anos de experiência em sistemas de missão crítica à disposição
+              do seu projeto.
+            </p>
+          </div>
+          <div class="cta-right reveal d1">
+            <a class="btn-pink-lg" href="contato.html"
+              >Falar com Especialista →</a
+            >
+            <div class="cta-contact">
+              <a href="mailto:contato@netdev.systems">contato@netdev.systems</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">&lt; netDev<em>.</em>systems /&gt;</div>
+        <div class="footer-links">
+          <a href="sobre.html">Sobre</a>
+          <a href="cases.html">Cases</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="contato.html">Contato</a>
+        </div>
+        <div class="footer-copy">© 2026 NetDev Technology Group.</div>
+      </div>
+    </footer>
+
+    <!-- ═══ CONTROL PANEL ═══ -->
+    <div id="controls">
+      <div class="ctrl-panel">
+        <div class="ctrl-row">
+          <span class="ctrl-label">Modo Claro</span>
+          <label class="toggle">
+            <input type="checkbox" id="ctrl-toggle" />
+            <span class="toggle-track"></span>
+          </label>
+        </div>
+        <div class="ctrl-row">
+          <span class="ctrl-label">Intensidade da Cor</span>
+          <div class="ctrl-pink-preview" id="ctrl-preview"></div>
+        </div>
+        <div class="ctrl-row">
+          <input
+            type="range"
+            class="ctrl-slider"
+            id="ctrl-slider"
+            min="0"
+            max="100"
+            value="50"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="js/tron.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

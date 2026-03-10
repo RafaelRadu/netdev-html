@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cases — NetDev.systems</title>
+    <meta
+      name="description"
+      content="Cases reais da NetDev: Metrópoles, SESC DF, Gama FC, Agência Brasília, Cintia ADS."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&family=IBM+Plex+Mono:wght@300;400;500&family=Barlow:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { corePlugins: { preflight: false } };
+    </script>
+  </head>
+  <body>
+    <!-- ═══ NAV ═══ -->
+    <nav id="main-nav">
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html"
+          >&lt; netDev<em>.</em>systems /&gt;</a
+        >
+        <div class="nav-right">
+          <a class="nav-link" href="cases.html">Cases</a>
+          <a class="nav-link" href="index.html#geo">Geo &amp; Mapas</a>
+          <a class="nav-link" href="index.html#clientes">Clientes</a>
+          <a class="nav-link" href="servicos.html">Serviços</a>
+          <button class="nav-link nav-tron-btn tron-trigger">🎮 Tron</button>
+          <a class="nav-cta" href="contato.html">Falar com Especialista →</a>
+          <button class="nav-hamburger" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-mobile-menu">
+      <a class="nav-mobile-link" href="index.html">Home</a>
+      <a class="nav-mobile-link" href="sobre.html">Sobre</a>
+      <a class="nav-mobile-link" href="cases.html">Cases</a>
+      <a class="nav-mobile-link" href="servicos.html">Serviços</a>
+      <a class="nav-mobile-link" href="contato.html">Contato</a>
+      <button class="nav-mobile-link tron-trigger">🎮 Tron Game</button>
+      <!-- Mobile Theme Controls -->
+      <div class="nav-mobile-controls">
+        <div class="nav-mobile-ctrl-row">
+          <span class="nav-mobile-ctrl-label">Modo Claro</span>
+          <label class="toggle">
+            <input type="checkbox" class="mobile-theme-toggle" />
+            <span class="toggle-track"></span>
+          </label>
+        </div>
+        <div class="nav-mobile-ctrl-row">
+          <span class="nav-mobile-ctrl-label">Cor</span>
+          <div class="ctrl-pink-preview mobile-preview"></div>
+        </div>
+        <div class="nav-mobile-ctrl-row">
+          <input
+            type="range"
+            class="ctrl-slider nav-mobile-slider mobile-color-slider"
+            min="0"
+            max="100"
+            value="50"
+          />
+        </div>
+      </div>
+      <button
+        class="nav-hamburger open"
+        style="position: absolute; top: 1.4rem; right: 1.5rem"
+        aria-label="Fechar menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- ═══ MAIN ═══ -->
+    <main>
+      <!-- PAGE HERO -->
+      <div class="page-hero">
+        <div class="page-hero-eyebrow">Cases &amp; Projetos</div>
+        <h1 class="page-hero-h1">Cases Reais,<br /><em>Números Reais.</em></h1>
+        <p class="page-hero-sub">
+          Projetos que movem o Brasil — de portais com milhões de usuários a
+          plataformas de governo e experiências de game que engajam.
+        </p>
+      </div>
+
+      <!-- CASES GRID -->
+      <div class="cases-grid">
+        <!-- Metrópoles -->
+        <div class="case-card reveal">
+          <div class="case-tag">Portal de Notícias · Engenharia</div>
+          <div class="case-title" style="color: #e8186d">Metrópoles</div>
+          <div class="case-desc">
+            Reengenharia total do maior portal de notícias do Brasil.
+            Arquitetura distribuída com NoSQL e edge caching, sustentando
+            milhões de acessos diários com latência sub-100ms.
+          </div>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-n">99.9%</div>
+              <div class="case-stat-l">Uptime</div>
+            </div>
+            <div>
+              <div class="case-stat-n">65%</div>
+              <div class="case-stat-l">Menos load time</div>
+            </div>
+            <div>
+              <div class="case-stat-n">2 anos</div>
+              <div class="case-stat-l">de parceria</div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.4rem;
+              margin-top: 0.5rem;
+            "
+          >
+            <span class="stack-tag">Go</span><span class="stack-tag">NoSQL</span
+            ><span class="stack-tag">Edge Caching</span>
+            <span class="stack-tag">DDoS Mitigation</span
+            ><span class="stack-tag">CDN</span>
+          </div>
+        </div>
+
+        <!-- SESC DF -->
+        <div id="sesc" class="case-card reveal d1">
+          <div class="case-tag">Gamificação · Game Dev</div>
+          <div class="case-title" style="color: #8860ff">SESC DF</div>
+          <div class="case-desc">
+            Plataforma de gamificação estrutural para o SESC DF. Mecânicas de
+            engajamento que transformaram uma plataforma corporativa em
+            experiência viciante para colaboradores e usuários.
+          </div>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-n">3x</div>
+              <div class="case-stat-l">Retenção</div>
+            </div>
+            <div>
+              <div class="case-stat-n">76%</div>
+              <div class="case-stat-l">Mais engajamento</div>
+            </div>
+            <div>
+              <div class="case-stat-n">2M+</div>
+              <div class="case-stat-l">Usuários ativos</div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.4rem;
+              margin-top: 0.5rem;
+            "
+          >
+            <span class="stack-tag">Unity</span
+            ><span class="stack-tag">WebGL</span
+            ><span class="stack-tag">PlayFab</span>
+            <span class="stack-tag">React</span
+            ><span class="stack-tag">Node.js</span>
+          </div>
+        </div>
+
+        <!-- Gama FC -->
+        <div id="gama" class="case-card reveal">
+          <div class="case-tag">E-commerce · Sport Tech</div>
+          <div class="case-title" style="color: #e8186d">Gama FC</div>
+          <div class="case-desc">
+            Plataforma de sócio-torcedor e e-commerce headless para o Gama FC.
+            Checkout otimizado, integração com ERP e gestão de benefícios para
+            membros do clube.
+          </div>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-n">40%</div>
+              <div class="case-stat-l">Mais conversão</div>
+            </div>
+            <div>
+              <div class="case-stat-n">65%</div>
+              <div class="case-stat-l">Menos load time</div>
+            </div>
+            <div>
+              <div class="case-stat-n">3 meses</div>
+              <div class="case-stat-l">Time-to-market</div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.4rem;
+              margin-top: 0.5rem;
+            "
+          >
+            <span class="stack-tag">Next.js</span
+            ><span class="stack-tag">Medusa</span
+            ><span class="stack-tag">Stripe</span>
+            <span class="stack-tag">PostgreSQL</span
+            ><span class="stack-tag">Redis</span>
+          </div>
+        </div>
+
+        <!-- Agência Brasília -->
+        <div id="agbrasilia" class="case-card reveal d1">
+          <div class="case-tag">GovTech · Comunicação Oficial</div>
+          <div class="case-title" style="color: #8860ff">Agência Brasília</div>
+          <div class="case-desc">
+            Plataforma oficial de notícias do GDF. Alta disponibilidade para
+            comunicados críticos, suportando picos de 2M+ usuários diários
+            durante emergências e comunicados oficiais.
+          </div>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-n">2M+</div>
+              <div class="case-stat-l">Usuários diários</div>
+            </div>
+            <div>
+              <div class="case-stat-n">99.9%</div>
+              <div class="case-stat-l">Uptime</div>
+            </div>
+            <div>
+              <div class="case-stat-n">&lt;50ms</div>
+              <div class="case-stat-l">Latência</div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.4rem;
+              margin-top: 0.5rem;
+            "
+          >
+            <span class="stack-tag">WordPress Enterprise</span
+            ><span class="stack-tag">Varnish</span>
+            <span class="stack-tag">CDN</span><span class="stack-tag">AWS</span
+            ><span class="stack-tag">CloudFlare</span>
+          </div>
+        </div>
+
+        <!-- Cintia ADS -->
+        <div id="cintia" class="case-card reveal" style="grid-column: 1/-1">
+          <div class="case-tag">AdTech · Motor Proprietário</div>
+          <div class="case-title" style="color: #e8186d">Cintia ADS</div>
+          <div class="case-desc">
+            Motor proprietário de AdTech para gestão de inventário programático.
+            Processa 50k+ requisições por segundo para Record TV e Jovem Pan,
+            com targeting avançado e relatórios em tempo real.
+          </div>
+          <div class="case-stats">
+            <div>
+              <div class="case-stat-n">50k+</div>
+              <div class="case-stat-l">Req/s</div>
+            </div>
+            <div>
+              <div class="case-stat-n">24/7</div>
+              <div class="case-stat-l">Operação</div>
+            </div>
+            <div>
+              <div class="case-stat-n">99.9%</div>
+              <div class="case-stat-l">Disponibilidade</div>
+            </div>
+          </div>
+          <div
+            style="
+              display: flex;
+              flex-wrap: wrap;
+              gap: 0.4rem;
+              margin-top: 0.5rem;
+            "
+          >
+            <span class="stack-tag">Go</span><span class="stack-tag">Redis</span
+            ><span class="stack-tag">Kafka</span>
+            <span class="stack-tag">PostgreSQL</span
+            ><span class="stack-tag">OpenRTB</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <section id="cta">
+        <div class="cta-bg-txt">Cases</div>
+        <div class="cta-inner">
+          <div class="reveal">
+            <h2 class="cta-h2">
+              Seu projeto<br />pode ser o<br /><em>próximo case.</em>
+            </h2>
+            <p class="cta-sub">
+              Conte-nos o desafio. Nossos arquitetos avaliam viabilidade e
+              estratégia sem compromisso.
+            </p>
+          </div>
+          <div class="cta-right reveal d1">
+            <a class="btn-pink-lg" href="contato.html"
+              >Falar com Especialista →</a
+            >
+            <div class="cta-contact">
+              <a href="mailto:contato@netdev.systems">contato@netdev.systems</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">&lt; netDev<em>.</em>systems /&gt;</div>
+        <div class="footer-links">
+          <a href="sobre.html">Sobre</a>
+          <a href="cases.html">Cases</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="contato.html">Contato</a>
+        </div>
+        <div class="footer-copy">© 2026 NetDev Technology Group.</div>
+      </div>
+    </footer>
+
+    <!-- ═══ CONTROL PANEL ═══ -->
+    <div id="controls">
+      <div class="ctrl-panel">
+        <div class="ctrl-row">
+          <span class="ctrl-label">Modo Claro</span>
+          <label class="toggle">
+            <input type="checkbox" id="ctrl-toggle" />
+            <span class="toggle-track"></span>
+          </label>
+        </div>
+        <div class="ctrl-row">
+          <span class="ctrl-label">Intensidade da Cor</span>
+          <div class="ctrl-pink-preview" id="ctrl-preview"></div>
+        </div>
+        <div class="ctrl-row">
+          <input
+            type="range"
+            class="ctrl-slider"
+            id="ctrl-slider"
+            min="0"
+            max="100"
+            value="50"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="js/tron.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

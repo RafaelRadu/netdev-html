@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contato — NetDev.systems</title>
+    <meta
+      name="description"
+      content="Fale com os arquitetos da NetDev. Consultoria sem compromisso para projetos de missão crítica."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&family=IBM+Plex+Mono:wght@300;400;500&family=Barlow:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { corePlugins: { preflight: false } };
+    </script>
+  </head>
+  <body>
+    <!-- ═══ NAV ═══ -->
+    <nav id="main-nav">
+      <div class="nav-inner">
+        <a class="nav-logo" href="index.html"
+          >&lt; netDev<em>.</em>systems /&gt;</a
+        >
+        <div class="nav-right">
+          <a class="nav-link" href="cases.html">Cases</a>
+          <a class="nav-link" href="index.html#geo">Geo &amp; Mapas</a>
+          <a class="nav-link" href="index.html#clientes">Clientes</a>
+          <a class="nav-link" href="servicos.html">Serviços</a>
+          <button class="nav-link nav-tron-btn tron-trigger">🎮 Tron</button>
+          <a class="nav-cta" href="contato.html">Falar com Especialista →</a>
+          <button class="nav-hamburger" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="nav-mobile-menu">
+      <a class="nav-mobile-link" href="index.html">Home</a>
+      <a class="nav-mobile-link" href="sobre.html">Sobre</a>
+      <a class="nav-mobile-link" href="cases.html">Cases</a>
+      <a class="nav-mobile-link" href="servicos.html">Serviços</a>
+      <a class="nav-mobile-link" href="contato.html">Contato</a>
+      <button class="nav-mobile-link tron-trigger">🎮 Tron Game</button>
+      <!-- Mobile Theme Controls -->
+      <div class="nav-mobile-controls">
+        <div class="nav-mobile-ctrl-row">
+          <span class="nav-mobile-ctrl-label">Modo Claro</span>
+          <label class="toggle">
+            <input type="checkbox" class="mobile-theme-toggle" />
+            <span class="toggle-track"></span>
+          </label>
+        </div>
+        <div class="nav-mobile-ctrl-row">
+          <span class="nav-mobile-ctrl-label">Cor</span>
+          <div class="ctrl-pink-preview mobile-preview"></div>
+        </div>
+        <div class="nav-mobile-ctrl-row">
+          <input
+            type="range"
+            class="ctrl-slider nav-mobile-slider mobile-color-slider"
+            min="0"
+            max="100"
+            value="50"
+          />
+        </div>
+      </div>
+      <button
+        class="nav-hamburger open"
+        style="position: absolute; top: 1.4rem; right: 1.5rem"
+        aria-label="Fechar menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- ═══ MAIN ═══ -->
+    <main>
+      <!-- PAGE HERO -->
+      <div class="page-hero">
+        <div class="page-hero-eyebrow">Contato</div>
+        <h1 class="page-hero-h1">Vamos<br /><em>Conversar.</em></h1>
+        <p class="page-hero-sub">
+          Agende uma conversa com nossos arquitetos. Sem pitch, sem promessas
+          vazias — só análise técnica honesta do seu desafio.
+        </p>
+      </div>
+
+      <!-- CONTATO WRAP -->
+      <div class="contato-wrap">
+        <!-- FORM -->
+        <div class="contato-form reveal">
+          <div style="margin-bottom: 2rem">
+            <div class="section-eyebrow">Enviar Mensagem</div>
+            <div class="section-h2" style="font-size: clamp(2rem, 3vw, 3rem)">
+              Qual é o<br /><em>seu desafio?</em>
+            </div>
+          </div>
+
+          <form id="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+              <label class="form-label" for="nome">Nome</label>
+              <input
+                class="form-input"
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Seu nome"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">E-mail</label>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="seu@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="empresa">Empresa</label>
+              <input
+                class="form-input"
+                type="text"
+                id="empresa"
+                name="empresa"
+                placeholder="Nome da empresa"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="servico"
+                >Serviço de interesse</label
+              >
+              <select class="form-select" id="servico" name="servico">
+                <option value="">Selecione um serviço</option>
+                <option value="sistemas-robustos">Sistemas Robustos</option>
+                <option value="game-dev">Game Dev</option>
+                <option value="ecommerce">E-commerce High-end</option>
+                <option value="cybersecurity">Cybersecurity</option>
+                <option value="ai-automacao">AI &amp; Automação</option>
+                <option value="staff-augmentation">Staff Augmentation</option>
+                <option value="outro">Outro</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom: 1.5rem">
+              <label class="form-label" for="mensagem">Mensagem</label>
+              <textarea
+                class="form-textarea"
+                id="mensagem"
+                name="mensagem"
+                placeholder="Descreva seu projeto, desafio ou dúvida..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="form-submit">Enviar Mensagem →</button>
+          </form>
+        </div>
+
+        <!-- INFO -->
+        <div class="contato-info reveal d1">
+          <div style="margin-bottom: 2rem">
+            <div class="section-eyebrow">Informações</div>
+            <div class="section-h2" style="font-size: clamp(2rem, 3vw, 3rem)">
+              Fale<br /><em>Diretamente.</em>
+            </div>
+          </div>
+
+          <div>
+            <div class="contato-info-label">E-mail</div>
+            <a href="mailto:contato@netdev.systems" class="contato-info-val"
+              >contato@netdev.systems</a
+            >
+          </div>
+          <div>
+            <div class="contato-info-label">Site</div>
+            <a href="https://netdev.systems" class="contato-info-val"
+              >www.netdev.systems</a
+            >
+          </div>
+          <div>
+            <div class="contato-info-label">Localização</div>
+            <div class="contato-info-val">
+              São Paulo, SP | Florianópolis, SC | Brasília, DF — Brasil
+            </div>
+          </div>
+          <div>
+            <div class="contato-info-label">Atendimento</div>
+            <div class="contato-info-val">Seg–Sex, 9h–18h (BRT)</div>
+          </div>
+
+          <div
+            style="
+              margin-top: 2rem;
+              padding: 1.5rem;
+              border: 1px solid var(--border);
+              border-left: 2px solid var(--pink);
+              background: var(--pink-glow);
+            "
+          >
+            <div
+              style="
+                font-family: var(--font-mono);
+                font-size: 0.62rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                color: var(--pink);
+                margin-bottom: 0.6rem;
+              "
+            >
+              Resposta Rápida
+            </div>
+            <div
+              style="
+                font-size: 0.85rem;
+                color: var(--muted);
+                line-height: 1.7;
+                font-weight: 300;
+              "
+            >
+              Respondemos todas as mensagens em até
+              <strong style="color: var(--white)">24 horas úteis</strong>. Para
+              projetos urgentes, mencione no campo de mensagem.
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem">
+            <div class="section-eyebrow" style="margin-bottom: 1rem">
+              Nossos Serviços
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem">
+              <div
+                style="
+                  font-family: var(--font-cond);
+                  font-size: 1rem;
+                  font-weight: 600;
+                  color: var(--muted);
+                  text-transform: uppercase;
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                "
+              >
+                <span style="color: var(--pink); font-size: 0.7rem">→</span>
+                Sistemas Robustos
+              </div>
+              <div
+                style="
+                  font-family: var(--font-cond);
+                  font-size: 1rem;
+                  font-weight: 600;
+                  color: var(--muted);
+                  text-transform: uppercase;
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                "
+              >
+                <span style="color: var(--pink); font-size: 0.7rem">→</span>
+                Game Dev
+              </div>
+              <div
+                style="
+                  font-family: var(--font-cond);
+                  font-size: 1rem;
+                  font-weight: 600;
+                  color: var(--muted);
+                  text-transform: uppercase;
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                "
+              >
+                <span style="color: var(--pink); font-size: 0.7rem">→</span>
+                E-commerce High-end
+              </div>
+              <div
+                style="
+                  font-family: var(--font-cond);
+                  font-size: 1rem;
+                  font-weight: 600;
+                  color: var(--muted);
+                  text-transform: uppercase;
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                "
+              >
+                <span style="color: var(--pink); font-size: 0.7rem">→</span>
+                Cybersecurity
+              </div>
+              <div
+                style="
+                  font-family: var(--font-cond);
+                  font-size: 1rem;
+                  font-weight: 600;
+                  color: var(--muted);
+                  text-transform: uppercase;
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                "
+              >
+                <span style="color: var(--pink); font-size: 0.7rem">→</span> AI
+                &amp; Automação
+              </div>
+              <div
+                style="
+                  font-family: var(--font-cond);
+                  font-size: 1rem;
+                  font-weight: 600;
+                  color: var(--muted);
+                  text-transform: uppercase;
+                  display: flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                "
+              >
+                <span style="color: var(--pink); font-size: 0.7rem">→</span>
+                Staff Augmentation
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ═══ FOOTER ═══ -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-logo">&lt; netDev<em>.</em>systems /&gt;</div>
+        <div class="footer-links">
+          <a href="sobre.html">Sobre</a>
+          <a href="cases.html">Cases</a>
+          <a href="servicos.html">Serviços</a>
+          <a href="contato.html">Contato</a>
+        </div>
+        <div class="footer-copy">© 2026 NetDev Technology Group.</div>
+      </div>
+    </footer>
+
+    <!-- ═══ CONTROL PANEL ═══ -->
+    <div id="controls">
+      <div class="ctrl-panel">
+        <div class="ctrl-row">
+          <span class="ctrl-label">Modo Claro</span>
+          <label class="toggle">
+            <input type="checkbox" id="ctrl-toggle" />
+            <span class="toggle-track"></span>
+          </label>
+        </div>
+        <div class="ctrl-row">
+          <span class="ctrl-label">Intensidade da Cor</span>
+          <div class="ctrl-pink-preview" id="ctrl-preview"></div>
+        </div>
+        <div class="ctrl-row">
+          <input
+            type="range"
+            class="ctrl-slider"
+            id="ctrl-slider"
+            min="0"
+            max="100"
+            value="50"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="js/tron.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      function handleSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector(".form-submit");
+        const orig = btn.textContent;
+        btn.textContent = "Mensagem Enviada ✓";
+        btn.style.background = "hsl(160,60%,35%)";
+        setTimeout(() => {
+          btn.textContent = orig;
+          btn.style.background = "";
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
