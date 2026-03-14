@@ -383,105 +383,59 @@
         <div class="geo-body">
           <div class="geo-visual reveal">
             <div class="geo-canvas-wrap">
-              <div class="map-grid"></div>
-              <div class="map-3d">
-                <svg
-                  viewBox="0 0 320 260"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <polygon
-                    points="60,40 140,30 180,80 120,100 70,90"
-                    fill="rgba(232,24,109,.08)"
-                    stroke="rgba(232,24,109,.25)"
-                    stroke-width="1"
-                  />
-                  <polygon
-                    points="140,30 230,45 250,110 180,80"
-                    fill="rgba(192,132,252,.06)"
-                    stroke="rgba(192,132,252,.2)"
-                    stroke-width="1"
-                  />
-                  <polygon
-                    points="70,90 120,100 130,160 60,155"
-                    fill="rgba(232,24,109,.05)"
-                    stroke="rgba(232,24,109,.15)"
-                    stroke-width="1"
-                  />
-                  <polygon
-                    points="120,100 180,80 210,155 130,160"
-                    fill="rgba(45,32,96,.4)"
-                    stroke="rgba(255,255,255,.08)"
-                    stroke-width="1"
-                  />
-                  <path
-                    d="M50,70 Q100,55 150,65 Q200,75 250,60"
-                    stroke="rgba(232,24,109,.12)"
-                    stroke-width="1"
-                    fill="none"
-                  />
-                  <path
-                    d="M45,100 Q95,85 150,95 Q205,105 255,90"
-                    stroke="rgba(232,24,109,.08)"
-                    stroke-width="1"
-                    fill="none"
-                  />
-                  <path
-                    d="M85,75 L155,55 L220,80 L190,130"
-                    stroke="rgba(232,24,109,.5)"
-                    stroke-width="1.5"
-                    fill="none"
-                    stroke-dasharray="4 3"
-                  />
-                  <circle cx="85" cy="75" r="4" fill="rgba(232,24,109,.8)" />
-                  <circle
-                    cx="85"
-                    cy="75"
-                    r="9"
-                    fill="none"
-                    stroke="rgba(232,24,109,.3)"
-                    stroke-width="1"
-                  >
-                    <animate
-                      attributeName="r"
-                      values="4;14;4"
-                      dur="2s"
-                      repeatCount="indefinite"
-                    />
-                    <animate
-                      attributeName="opacity"
-                      values="0.5;0;0.5"
-                      dur="2s"
-                      repeatCount="indefinite"
-                    />
-                  </circle>
-                  <circle cx="190" cy="130" r="4" fill="rgba(192,132,252,.8)" />
-                </svg>
-              </div>
+              <div class="map-3d-scene">
+  <div class="map-grid">
+    <!-- Efeito outline de Florianopolis -->
+    <svg class="floripa-svg" viewBox="0 0 100 200" style="position: absolute; left: 50%; top: 50%; width: 250px; height: 500px; transform: translate(-50%, -50%); overflow: visible;">
+      <!-- Shape da Ilha de Santa Catarina (Floripa) -->
+      <path d="M 40,20 Q 70,10 75,40 T 80,80 Q 90,120 70,150 T 45,180 Q 30,190 35,160 T 30,100 Q 15,90 20,60 T 40,20 Z" fill="var(--pink-glow)" stroke="var(--pink)" stroke-width="1.5" opacity="0.6" style="filter: drop-shadow(0 0 10px var(--pink));" />
+      <!-- Lagoa da Concei��o rough cutout -->
+      <path d="M 55,85 Q 60,90 55,100 T 45,108 Q 40,100 48,90 T 55,85" fill="var(--ink)" stroke="var(--pink)" stroke-width="0.5" opacity="0.4" />
+      <!-- Ponte Hercilio Luz -->
+      <path d="M -20,60 L 25,75" stroke="rgba(232, 24, 109, 0.4)" stroke-width="2" stroke-dasharray="2 2" />
+    </svg>
 
-              <div class="radar" style="top: 40%; left: 55%">
-                <div class="radar-ring"></div>
-                <div class="radar-ring"></div>
-                <div class="radar-ring"></div>
-              </div>
+    <!-- Centro (Ponte connection) -->
+    <div class="map-bar" style="left: 42%; top: 38%; --h: 120px;">
+      <div class="bar-face front"></div><div class="bar-face back"></div><div class="bar-face left"></div><div class="bar-face right"></div><div class="bar-face top">
+        <div class="map-pin" style="position: absolute; transform: translate(-50%, -100%) rotateX(-60deg) translateY(-20px); left: 50%; top: 0;">
+          <div class="pin-dot" style="background: var(--pink); box-shadow: 0 0 10px var(--pink); border-radius:50%; width:8px; height:8px;"></div>
+          <div class="pin-label" style="margin-top: 8px; font-family: var(--font-mono); font-size: 0.7rem; color: var(--pink); text-shadow: 0 0 10px var(--pink); background: var(--bg); padding: 4px 8px; border: 1px solid var(--border-p); border-radius: 4px; white-space: nowrap;">Floripa - Centro (HQ)</div>
+        </div>
+      </div>
+    </div>
 
-              <div class="map-pin" style="left: 27%; top: 32%">
-                <div class="pin-label">Brasília</div>
-                <div class="pin-dot"></div>
-              </div>
-              <div class="map-pin" style="left: 48%; top: 24%">
-                <div class="pin-label">São Paulo</div>
-                <div class="pin-dot"></div>
-              </div>
-              <div class="map-pin" style="left: 68%; top: 38%">
-                <div class="pin-label">Rio</div>
-                <div class="pin-dot dim"></div>
-              </div>
+    <!-- Norte da Ilha -->
+    <div class="map-bar" style="left: 60%; top: 20%; --h: 70px;">
+      <div class="bar-face front"></div><div class="bar-face back"></div><div class="bar-face left"></div><div class="bar-face right"></div><div class="bar-face top">
+        <div class="map-pin" style="position: absolute; transform: translate(-50%, -100%) rotateX(-60deg) translateY(-10px); left: 50%; top: 0;">
+          <div class="pin-dot" style="background: var(--muted); border-radius: 50%; width: 6px; height: 6px;"></div>
+          <div class="pin-label" style="margin-top: 6px; font-family: var(--font-mono); font-size: 0.6rem; color: var(--muted); background: var(--bg); padding: 2px 4px; border: 1px solid var(--border-p); border-radius: 4px; white-space:nowrap;">Norte / Sapiens</div>
+        </div>
+      </div>
+    </div>
 
-              <div class="map-overlay">
+    <!-- Sul da Ilha -->
+    <div class="map-bar" style="left: 36%; top: 75%; --h: 50px;">
+      <div class="bar-face front"></div><div class="bar-face back"></div><div class="bar-face left"></div><div class="bar-face right"></div><div class="bar-face top">
+        <div class="map-pin" style="position: absolute; transform: translate(-50%, -100%) rotateX(-60deg) translateY(-10px); left: 50%; top: 0;">
+          <div class="pin-dot" style="background: var(--muted); border-radius: 50%; width: 6px; height: 6px;"></div>
+          <div class="pin-label" style="margin-top: 6px; font-family: var(--font-mono); font-size: 0.6rem; color: var(--muted); background: var(--bg); padding: 2px 4px; border: 1px solid var(--border-p); border-radius: 4px; white-space:nowrap;">Sul da Ilha</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Data nodes gen�ricos espalhados pela ilha -->
+    <div class="map-bar" style="left: 48%; top: 55%; --h: 90px;"><div class="bar-face front"></div><div class="bar-face back"></div><div class="bar-face left"></div><div class="bar-face right"></div><div class="bar-face top"></div></div>
+    <div class="map-bar" style="left: 55%; top: 35%; --h: 40px;"><div class="bar-face front"></div><div class="bar-face back"></div><div class="bar-face left"></div><div class="bar-face right"></div><div class="bar-face top"></div></div>
+    <div class="map-bar" style="left: 38%; top: 48%; --h: 60px;"><div class="bar-face front"></div><div class="bar-face back"></div><div class="bar-face left"></div><div class="bar-face right"></div><div class="bar-face top"></div></div>
+  </div>
+</div>
+
+<div class="map-overlay">
                 zoom: <span>14.2</span><br />
                 entities: <span>1.847</span><br />
-                lat/lng: <span>-15.7801, -47.9292</span>
+                lat/lng: <span>-27.595, -48.548</span>
               </div>
             </div>
           </div>

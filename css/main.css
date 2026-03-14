@@ -245,6 +245,13 @@ nav {
   border-bottom: 1px solid var(--border);
   transition: background 0.3s;
 }
+nav.scrolled {
+  background: hsla(248, 60%, 5%, 0.9);
+}
+body.light nav.scrolled {
+  background: rgba(246, 244, 255, 0.9);
+}
+
 .nav-inner {
   display: flex;
   align-items: center;
@@ -918,38 +925,61 @@ body.light .terminal-block {
   justify-content: center;
 }
 .geo-canvas-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
   position: relative;
-  width: 320px;
-  height: 260px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--ink);
+  border: 1px solid var(--border-p);
+  perspective: 1000px;
 }
 
-.map-layer {
+.map-3d-scene {
   position: absolute;
-  inset: 0;
+  inset: -20%;
+  transform-style: preserve-3d;
+  transform: rotateX(60deg) rotateZ(0deg);
+  transition: transform 0.1s ease-out;
 }
 
 .map-grid {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   background-image:
     linear-gradient(var(--border-p) 1px, transparent 1px),
     linear-gradient(90deg, var(--border-p) 1px, transparent 1px);
-  background-size: 32px 32px;
-  border-radius: 4px;
-  border: 1px solid var(--border-p);
+  background-size: 40px 40px;
+  transform-style: preserve-3d;
 }
 
-.map-3d {
+.map-heatmap {
   position: absolute;
   inset: 0;
-  transform: perspective(600px) rotateX(30deg) rotateZ(-8deg);
-  transform-origin: center bottom;
+  background: radial-gradient(circle at 45% 55%, var(--pink-glow) 0%, rgba(0,0,0,0) 60%),
+              radial-gradient(circle at 60% 30%, rgba(160, 148, 200, 0.1) 0%, rgba(0,0,0,0) 40%);
+  pointer-events: none;
 }
 
-.map-3d svg {
-  width: 100%;
-  height: 100%;
+.map-bar {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  transform-style: preserve-3d;
 }
+
+.bar-face {
+  position: absolute;
+  background: rgba(232, 24, 109, 0.4);
+  border: 1px solid rgba(232, 24, 109, 0.8);
+}
+
+.bar-face.front  { width: 20px; height: var(--h); transform: rotateX(-90deg) translateZ(10px) translateY(calc(var(--h) / 2)); background: rgba(232,24,109, 0.6); }
+.bar-face.back   { width: 20px; height: var(--h); transform: rotateX(90deg) translateZ(10px) translateY(calc(var(--h) / -2)); }
+.bar-face.left   { width: 20px; height: var(--h); transform: rotateY(-90deg) rotateZ(90deg) translateX(calc(var(--h) / -2)) translateZ(10px); }
+.bar-face.right  { width: 20px; height: var(--h); transform: rotateY(90deg) rotateZ(-90deg) translateX(calc(var(--h) / 2)) translateZ(10px); }
+.bar-face.top    { width: 20px; height: 20px; transform: translateZ(var(--h)); background: rgba(232, 24, 109, 0.8); box-shadow: 0 0 15px var(--pink); }
+
 
 .map-pin {
   position: absolute;

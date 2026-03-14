@@ -153,6 +153,7 @@ function initControlPanel() {
   }
 
   function setLightMode(isLight) {
+    localStorage.setItem("netdev-theme", isLight ? "light" : "dark");
     document.body.classList.toggle("light", isLight);
     // Sync both toggles
     if (toggle) toggle.checked = isLight;
@@ -163,9 +164,21 @@ function initControlPanel() {
     if (slider) slider.value = value;
     if (mobileSlider) mobileSlider.value = value;
     updatePink(parseInt(value));
+    localStorage.setItem('netdev-color', value);
   }
 
-  updatePink(50);
+    const savedColor = localStorage.getItem('netdev-color');
+  if (savedColor !== null) {
+    syncSliders(savedColor);
+  } else {
+    updatePink(50);
+  }
+
+  const savedTheme = localStorage.getItem('netdev-theme');
+  if (savedTheme === 'light') {
+    setLightMode(true);
+  }
+
 
   // Desktop controls
   if (slider) {
@@ -197,10 +210,11 @@ function initNav() {
   const mobileMenu = document.querySelector(".nav-mobile-menu");
 
   if (nav) {
+    if (window.scrollY > 40) nav.classList.add("scrolled");
     window.addEventListener(
       "scroll",
       () => {
-        nav.style.background = window.scrollY > 40 ? "hsla(248,60%,5%,.9)" : "";
+        nav.classList.toggle("scrolled", window.scrollY > 40);
       },
       { passive: true },
     );
@@ -302,4 +316,22 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initCounters();
   initTronTrigger();
+});
+
+/* --- 3D Map Interactivity --- */
+document.addEventListener('mousemove', (e) => {
+  const scene = document.querySelector('.map-3d-scene');
+  if (scene) {
+    const wrap = scene.parentElement;
+    const rect = wrap.getBoundingClientRect();
+    if (e.clientY > rect.top - window.innerHeight && e.clientY < rect.bottom + window.innerHeight) {
+      const x = e.clientX - (rect.left + rect.width / 2);
+      const y = e.clientY - (rect.top + rect.height / 2);
+      const clampX = Math.max(-1, Math.min(1, x / (rect.width / 2)));
+      const clampY = Math.max(-1, Math.min(1, y / (rect.height / 2)));
+      const rotX = 60 - clampY * 10;
+      const rotZ = clampX * 25;
+      scene.style.transform = 'rotateX(' + rotX + 'deg) rotateZ(' + rotZ + 'deg)';
+    }
+  }
 });
