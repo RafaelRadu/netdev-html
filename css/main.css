@@ -58,6 +58,7 @@ body.light {
 }
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
 }
 body {
   background: var(--bg);
@@ -267,6 +268,7 @@ body.light nav {
 .nav-logo {
   font-family: var(--font-mono);
   font-size: 0.85rem;
+  font-weight: 500;
   color: var(--white);
   text-decoration: none;
 }
@@ -281,7 +283,8 @@ body.light nav {
 }
 .nav-link {
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 500;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
@@ -302,7 +305,8 @@ body.light nav {
 }
 .nav-cta {
   font-family: var(--font-mono);
-  font-size: 0.86rem;
+  font-size: 0.85rem;
+  font-weight: 500;
   color: var(--pink);
   border: 1px solid var(--pink-dim);
   padding: 0.5rem 1.2rem;
@@ -956,8 +960,17 @@ body.light .terminal-block {
 .map-heatmap {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 45% 55%, var(--pink-glow) 0%, rgba(0,0,0,0) 60%),
-              radial-gradient(circle at 60% 30%, rgba(160, 148, 200, 0.1) 0%, rgba(0,0,0,0) 40%);
+  background:
+    radial-gradient(
+      circle at 45% 55%,
+      var(--pink-glow) 0%,
+      rgba(0, 0, 0, 0) 60%
+    ),
+    radial-gradient(
+      circle at 60% 30%,
+      rgba(160, 148, 200, 0.1) 0%,
+      rgba(0, 0, 0, 0) 40%
+    );
   pointer-events: none;
 }
 
@@ -974,12 +987,36 @@ body.light .terminal-block {
   border: 1px solid rgba(232, 24, 109, 0.8);
 }
 
-.bar-face.front  { width: 20px; height: var(--h); transform: rotateX(-90deg) translateZ(10px) translateY(calc(var(--h) / 2)); background: rgba(232,24,109, 0.6); }
-.bar-face.back   { width: 20px; height: var(--h); transform: rotateX(90deg) translateZ(10px) translateY(calc(var(--h) / -2)); }
-.bar-face.left   { width: 20px; height: var(--h); transform: rotateY(-90deg) rotateZ(90deg) translateX(calc(var(--h) / -2)) translateZ(10px); }
-.bar-face.right  { width: 20px; height: var(--h); transform: rotateY(90deg) rotateZ(-90deg) translateX(calc(var(--h) / 2)) translateZ(10px); }
-.bar-face.top    { width: 20px; height: 20px; transform: translateZ(var(--h)); background: rgba(232, 24, 109, 0.8); box-shadow: 0 0 15px var(--pink); }
-
+.bar-face.front {
+  width: 20px;
+  height: var(--h);
+  transform: rotateX(-90deg) translateZ(10px) translateY(calc(var(--h) / 2));
+  background: rgba(232, 24, 109, 0.6);
+}
+.bar-face.back {
+  width: 20px;
+  height: var(--h);
+  transform: rotateX(90deg) translateZ(10px) translateY(calc(var(--h) / -2));
+}
+.bar-face.left {
+  width: 20px;
+  height: var(--h);
+  transform: rotateY(-90deg) rotateZ(90deg) translateX(calc(var(--h) / -2))
+    translateZ(10px);
+}
+.bar-face.right {
+  width: 20px;
+  height: var(--h);
+  transform: rotateY(90deg) rotateZ(-90deg) translateX(calc(var(--h) / 2))
+    translateZ(10px);
+}
+.bar-face.top {
+  width: 20px;
+  height: 20px;
+  transform: translateZ(var(--h));
+  background: rgba(232, 24, 109, 0.8);
+  box-shadow: 0 0 15px var(--pink);
+}
 
 .map-pin {
   position: absolute;
