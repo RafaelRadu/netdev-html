@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gamificação Corporativa — NetDev.systems</title>
+  <meta name="description" content="Transformamos onboardings e treinamentos em missões gamificadas. Engajamento real, progressão visível, resultados mensuráveis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,300;1,400;1,700;1,900&family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <style>
+    /* ── PAGE-SPECIFIC STYLES ── */
+
+    /* Hero */
+    .gami-hero {
+      padding: 7rem 3rem 5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .gami-hero-eyebrow {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--pink);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .gami-hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 1.8rem;
+      height: 1px;
+      background: var(--pink);
+    }
+    .gami-hero h1 {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(3.5rem, 7vw, 7.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 2rem;
+      max-width: 900px;
+    }
+    .gami-hero h1 em {
+      font-style: italic;
+      color: var(--pink);
+    }
+    .gami-hero-sub {
+      font-family: "Barlow", sans-serif;
+      font-size: 1.1rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 580px;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .gami-hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* Pilares / Como funciona */
+    .gami-pillars {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .gami-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+    }
+    .gami-pillar {
+      padding: 2.5rem 3rem;
+      border-right: 1px solid var(--border);
+    }
+    .gami-pillar:last-child {
+      border-right: none;
+    }
+    .gami-pillar-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      display: block;
+    }
+    .gami-pillar-title {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.7rem;
+    }
+    .gami-pillar-desc {
+      font-family: "Barlow", sans-serif;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* Anti-objeção */
+    .gami-antiobj {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .gami-antiobj-left {
+      padding: 4rem 3rem;
+      border-right: 1px solid var(--border);
+    }
+    .gami-antiobj-right {
+      padding: 4rem 3rem;
+    }
+    .gami-antiobj-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.8rem;
+    }
+    .gami-antiobj-title {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    .gami-antiobj-title em {
+      font-style: italic;
+      color: var(--pink);
+    }
+    .gami-antiobj-body {
+      font-family: "Barlow", sans-serif;
+      font-size: 0.97rem;
+      color: var(--muted);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+    .gami-stat-block {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .gami-stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .gami-stat-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    .gami-stat-number {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--pink);
+      line-height: 1;
+    }
+    .gami-stat-label {
+      font-family: "Barlow", sans-serif;
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* Case SESC */
+    .gami-case {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .gami-case-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+    }
+    .gami-case-left {
+      padding: 3rem;
+      border-right: 1px solid var(--border);
+    }
+    .gami-case-right {
+      padding: 3rem;
+    }
+    .gami-case-client {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      color: var(--pink);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.8rem;
+    }
+    .gami-case-title {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.05;
+    }
+    .gami-case-desc {
+      font-family: "Barlow", sans-serif;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.85;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    .gami-case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .gami-case-tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .gami-case-metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .gami-case-metric {
+      background: var(--card);
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .gami-case-metric-val {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--text);
+    }
+    .gami-case-metric-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .gami-case-screens {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .gami-case-screen {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 16/10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .gami-case-screen-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 1rem;
+    }
+    .gami-screen-mock {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0.8rem;
+      gap: 0.4rem;
+    }
+    .gami-screen-bar {
+      height: 6px;
+      border-radius: 2px;
+      background: var(--pink);
+      opacity: 0.6;
+    }
+    .gami-screen-bar.short { width: 40%; opacity: 0.3; }
+    .gami-screen-bar.medium { width: 65%; opacity: 0.4; }
+    .gami-screen-dot-row {
+      display: flex;
+      gap: 0.4rem;
+      margin-top: 0.3rem;
+    }
+    .gami-screen-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--pink);
+      opacity: 0.5;
+    }
+    .gami-screen-dot.orange { background: #f97316; opacity: 0.7; }
+    .gami-screen-dot.blue { background: #2563eb; opacity: 0.7; }
+    .gami-screen-line {
+      height: 3px;
+      border-radius: 1px;
+      background: var(--border);
+    }
+    .gami-screen-line.fill-70 { width: 70%; background: #f97316; opacity: 0.5; }
+    .gami-screen-line.fill-40 { width: 40%; background: #f97316; opacity: 0.3; }
+
+    /* Para quem é */
+    .gami-segments {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .gami-segments-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+    }
+    .gami-segment {
+      padding: 2.2rem 2.5rem;
+      border-right: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .gami-segment:last-child { border-right: none; }
+    .gami-segment:hover { background: var(--pink-glow); }
+    .gami-segment-icon {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .gami-segment-title {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .gami-segment-desc {
+      font-family: "Barlow", sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* Diferencial técnico */
+    .gami-tech {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+    .gami-tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+    }
+    .gami-tech-item {
+      padding: 2rem 3rem;
+      border-right: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .gami-tech-item:last-child { border-right: none; }
+    .gami-tech-check {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--pink);
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+    .gami-tech-text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .gami-tech-name {
+      font-family: "Barlow", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .gami-tech-detail {
+      font-family: "Barlow", sans-serif;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    /* Formulário Diagnóstico */
+    .gami-form-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+    }
+    .gami-form-left {
+      padding: 4rem 3rem;
+      border-right: 1px solid var(--border);
+    }
+    .gami-form-left-title {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+    }
+    .gami-form-left-title em {
+      font-style: italic;
+      color: var(--pink);
+    }
+    .gami-form-left-desc {
+      font-family: "Barlow", sans-serif;
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.85;
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    .gami-form-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .gami-form-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .gami-form-step-num {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      color: var(--pink);
+      border: 1px solid var(--pink-dim);
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .gami-form-step-text {
+      font-family: "Barlow", sans-serif;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    .gami-form-right {
+      padding: 4rem 3rem;
+    }
+    .gami-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .gami-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .gami-form-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .gami-form input,
+    .gami-form select,
+    .gami-form textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: "Barlow", sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .gami-form input:focus,
+    .gami-form select:focus,
+    .gami-form textarea:focus {
+      border-color: var(--pink-dim);
+    }
+    .gami-form select {
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23a094c8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+    }
+    .gami-form select option {
+      background: var(--bg);
+      color: var(--text);
+    }
+    .gami-form textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .gami-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .gami-form-result {
+      display: none;
+      background: var(--pink-glow);
+      border: 1px solid var(--pink-dim);
+      padding: 1.2rem 1.5rem;
+      font-family: "Barlow", sans-serif;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .gami-form-result.show { display: block; }
+    .gami-form-result strong {
+      color: var(--pink);
+      font-weight: 500;
+    }
+
+    /* Demo CTA */
+    .gami-demo {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 3rem;
+    }
+    .gami-demo-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.8rem;
+    }
+    .gami-demo-title {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+    .gami-demo-title em {
+      font-style: italic;
+      color: var(--pink);
+    }
+    .gami-demo-desc {
+      font-family: "Barlow", sans-serif;
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.75;
+      font-weight: 300;
+      max-width: 500px;
+    }
+    .gami-demo-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-end;
+    }
+    .gami-demo-note {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      color: var(--muted);
+      text-align: right;
+      opacity: 0.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .gami-hero { padding: 6rem 1.5rem 3rem; }
+      .gami-pillars-grid { grid-template-columns: 1fr; }
+      .gami-pillar { border-right: none; border-bottom: 1px solid var(--border); }
+      .gami-antiobj { grid-template-columns: 1fr; }
+      .gami-antiobj-left { border-right: none; border-bottom: 1px solid var(--border); }
+      .gami-case-body { grid-template-columns: 1fr; }
+      .gami-case-left { border-right: none; border-bottom: 1px solid var(--border); }
+      .gami-segments-grid { grid-template-columns: 1fr 1fr; }
+      .gami-segment:nth-child(2) { border-right: none; }
+      .gami-segment:nth-child(3) { border-right: 1px solid var(--border); border-top: 1px solid var(--border); }
+      .gami-segment:nth-child(4) { border-right: none; border-top: 1px solid var(--border); }
+      .gami-tech-grid { grid-template-columns: 1fr; }
+      .gami-tech-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .gami-form-section { grid-template-columns: 1fr; }
+      .gami-form-left { border-right: none; border-bottom: 1px solid var(--border); }
+      .gami-form-row { grid-template-columns: 1fr; }
+      .gami-demo { grid-template-columns: 1fr; }
+      .gami-demo-actions { align-items: flex-start; }
+      .gami-demo-note { text-align: left; }
+    }
+    @media (max-width: 600px) {
+      .gami-segments-grid { grid-template-columns: 1fr; }
+      .gami-segment { border-right: none; border-top: 1px solid var(--border); }
+      .gami-segment:first-child { border-top: none; }
+      .gami-case-metrics { grid-template-columns: 1fr; }
+      .gami-case-screens { grid-template-columns: 1fr; }
+      .gami-hero-actions { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">&lt; netDev.systems /&gt;</a>
+      <div class="nav-right">
+        <a class="nav-link" href="cases.html">Cases</a>
+        <a class="nav-link" href="index.html#geo">Geo &amp; Mapas</a>
+        <a class="nav-link" href="index.html#clientes">Clientes</a>
+        <a class="nav-link" href="servicos.html">Serviços</a>
+        <a class="nav-link active" href="gamificacao.html">Gamificação</a>
+        <button class="nav-link nav-tron-btn tron-trigger">🎮 Tron</button>
+        <a class="nav-cta" href="contato.html">Falar com Especialista →</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="nav-mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <div class="mobile-links">
+        <a href="index.html" class="mobile-link">Home</a>
+        <a href="sobre.html" class="mobile-link">Sobre</a>
+        <a href="cases.html" class="mobile-link">Cases</a>
+        <a href="servicos.html" class="mobile-link">Serviços</a>
+        <a href="gamificacao.html" class="mobile-link active">Gamificação</a>
+        <a href="contato.html" class="mobile-link">Contato</a>
+        <button class="mobile-link tron-trigger" style="background:none;border:none;text-align:left;cursor:pointer;color:inherit;">🎮 Tron Game</button>
+      </div>
+      <div class="mobile-controls">
+        <div class="theme-row">
+          <span class="theme-label">Modo claro</span>
+          <button class="theme-toggle" id="theme-toggle-mobile" aria-label="Toggle theme">
+            <span class="theme-knob"></span>
+          </button>
+        </div>
+        <div class="intensity-row">
+          <span class="theme-label">Intensidade</span>
+          <input type="range" class="intensity-slider" id="intensity-mobile" min="0" max="100" value="100" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="gami-hero">
+      <p class="gami-hero-eyebrow reveal">Consultoria · Gamificação Corporativa</p>
+      <h1 class="reveal d1">
+        Seu onboarding<br />
+        vira uma <em>missão.</em><br />
+        Seus colaboradores,<br />
+        protagonistas.
+      </h1>
+      <p class="gami-hero-sub reveal d2">
+        Transformamos processos de integração, compliance e cultura organizacional em experiências gamificadas — com trilhas, conquistas e rankings que fazem o time querer chegar na próxima fase.
+      </p>
+      <div class="gami-hero-actions reveal d3">
+        <a href="#diagnostico" class="btn-pink">Diagnóstico gratuito →</a>
+        <a href="#case" class="btn-outline">Ver case SESC</a>
+      </div>
+    </section>
+
+    <!-- ── COMO FUNCIONA / 3 PILARES ── -->
+    <section class="gami-pillars">
+      <div class="sec-header reveal">
+        <span class="sec-label">Como funciona</span>
+        <span class="sec-tag">3 pilares</span>
+      </div>
+      <div class="gami-pillars-grid">
+        <div class="gami-pillar reveal d1">
+          <span class="gami-pillar-icon">🗺️</span>
+          <div class="gami-pillar-title">Missão</div>
+          <div class="gami-pillar-desc">
+            O conteúdo do onboarding é transformado em fases temáticas com narrativa. Cada fase representa um conjunto de situações e conhecimentos que o colaborador precisa dominar — não decorar.
+          </div>
+        </div>
+        <div class="gami-pillar reveal d2">
+          <span class="gami-pillar-icon">📈</span>
+          <div class="gami-pillar-title">Progressão</div>
+          <div class="gami-pillar-desc">
+            Pontos, vidas, conquistas e ranking em tempo real. O colaborador vê exatamente onde está na jornada e o quanto falta para avançar — motivação intrínseca sem precisar cobrar.
+          </div>
+        </div>
+        <div class="gami-pillar reveal d3">
+          <span class="gami-pillar-icon">📊</span>
+          <div class="gami-pillar-title">Resultado</div>
+          <div class="gami-pillar-desc">
+            Painel administrativo em tempo real para RH e gestores. Veja quem completou, onde travou, quais perguntas geraram mais erros — e ajuste o conteúdo sem precisar de desenvolvedor.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NÃO É JOGO. É ESTRATÉGIA. ── -->
+    <section class="gami-antiobj">
+      <div class="gami-antiobj-left reveal">
+        <p class="gami-antiobj-label">Quebrando o mito</p>
+        <h2 class="gami-antiobj-title">Não é jogo.<br /><em>É estratégia.</em></h2>
+        <p class="gami-antiobj-body">
+          Onboardings tradicionais têm até <strong style="color:var(--text)">70% de não-retenção</strong> de conteúdo após 7 dias — é um dado amplamente documentado em Learning &amp; Development. O problema não é a falta de atenção dos colaboradores. É que o formato não foi feito para o cérebro humano.
+          <br /><br />
+          Gamificação não é frescura de startup jovem. É design de aprendizado baseado em como o cérebro processa, retém e recorda informações: através de contexto, repetição espaçada, consequência imediata e senso de progresso.
+          <br /><br />
+          Empresas do setor público e privado — de todos os tamanhos — já usam essa abordagem para reduzir o tempo de onboarding, aumentar a adesão a políticas internas e tornar treinamentos obrigatórios... voluntários.
+        </p>
+      </div>
+      <div class="gami-antiobj-right reveal d2">
+        <div class="gami-stat-block">
+          <div class="gami-stat-item">
+            <span class="gami-stat-number">70%</span>
+            <span class="gami-stat-label">de não-retenção em onboardings tradicionais após 7 dias</span>
+          </div>
+          <div class="gami-stat-item">
+            <span class="gami-stat-number">4×</span>
+            <span class="gami-stat-label">mais engajamento em treinamentos com elementos de progressão visível</span>
+          </div>
+          <div class="gami-stat-item">
+            <span class="gami-stat-number">6 sem</span>
+            <span class="gami-stat-label">tempo médio de implantação de uma jornada gamificada completa</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CASE SESC ── -->
+    <section class="gami-case" id="case">
+      <div class="sec-header reveal">
+        <span class="sec-label">Case validado</span>
+        <span class="sec-tag">Em produção</span>
+      </div>
+      <div class="gami-case-body">
+        <div class="gami-case-left reveal">
+          <p class="gami-case-client">SESC-DF · Nova Sede</p>
+          <h3 class="gami-case-title">Missão Nova Sede</h3>
+          <p class="gami-case-desc">
+            Para a inauguração da nova sede do SESC-DF, desenvolvemos uma plataforma de onboarding gamificado com 4 fases temáticas representando os diferentes espaços e situações do novo ambiente. Colaboradores exploram, aprendem as regras de convivência e competem em ranking — tornando um processo burocrático em uma experiência memorável.
+          </p>
+          <div class="gami-case-tags">
+            <span class="gami-case-tag">Gamificação</span>
+            <span class="gami-case-tag">Onboarding</span>
+            <span class="gami-case-tag">React</span>
+            <span class="gami-case-tag">Node.js</span>
+            <span class="gami-case-tag">Painel Admin</span>
+            <span class="gami-case-tag">Deploy produção</span>
+          </div>
+          <div class="gami-case-metrics">
+            <div class="gami-case-metric">
+              <span class="gami-case-metric-val">4</span>
+              <span class="gami-case-metric-label">Fases temáticas</span>
+            </div>
+            <div class="gami-case-metric">
+              <span class="gami-case-metric-val">30</span>
+              <span class="gami-case-metric-label">Perguntas configuráveis</span>
+            </div>
+            <div class="gami-case-metric">
+              <span class="gami-case-metric-val">∞</span>
+              <span class="gami-case-metric-label">Questões pelo admin</span>
+            </div>
+            <div class="gami-case-metric">
+              <span class="gami-case-metric-val">100%</span>
+              <span class="gami-case-metric-label">White-label</span>
+            </div>
+          </div>
+        </div>
+        <div class="gami-case-right reveal d2">
+          <div class="gami-case-screens">
+            <!-- Mock da tela de jornada -->
+            <div class="gami-case-screen">
+              <div class="gami-screen-mock">
+                <div class="gami-screen-bar" style="width:80%;height:8px;margin-bottom:0.3rem;"></div>
+                <div class="gami-screen-bar short"></div>
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem">
+                  <div style="width:32px;height:32px;border-radius:50%;background:#2563eb;opacity:0.8;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:white;">3</div>
+                  <div style="display:flex;gap:0.3rem">
+                    <div class="gami-screen-dot orange" style="width:20px;height:20px;"></div>
+                    <div class="gami-screen-dot orange" style="width:20px;height:20px;opacity:0.4;"></div>
+                  </div>
+                </div>
+                <div class="gami-case-screen-label">Jornada de Fases</div>
+              </div>
+            </div>
+            <!-- Mock do ranking -->
+            <div class="gami-case-screen">
+              <div class="gami-screen-mock">
+                <div class="gami-screen-bar" style="width:60%;height:8px;margin-bottom:0.5rem;"></div>
+                <div style="display:flex;flex-direction:column;gap:0.4rem;flex:1">
+                  <div style="display:flex;align-items:center;gap:0.4rem;background:rgba(232,24,109,0.08);padding:0.3rem 0.4rem;border:1px solid rgba(232,24,109,0.2);">
+                    <div class="gami-screen-dot" style="width:16px;height:16px;background:#f59e0b;opacity:0.9;"></div>
+                    <div class="gami-screen-line fill-70" style="height:4px;flex:1;"></div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.4rem;padding:0.3rem 0.4rem;">
+                    <div class="gami-screen-dot" style="width:16px;height:16px;background:#94a3b8;opacity:0.5;"></div>
+                    <div class="gami-screen-line" style="height:4px;flex:1;"></div>
+                  </div>
+                  <div style="display:flex;align-items:center;gap:0.4rem;padding:0.3rem 0.4rem;">
+                    <div class="gami-screen-dot" style="width:16px;height:16px;background:#cd7c2f;opacity:0.5;"></div>
+                    <div class="gami-screen-line" style="height:4px;flex:1;"></div>
+                  </div>
+                </div>
+                <div class="gami-case-screen-label">Hall da Fama</div>
+              </div>
+            </div>
+            <!-- Mock do painel admin -->
+            <div class="gami-case-screen">
+              <div class="gami-screen-mock" style="background:rgba(8,7,13,0.6);">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.3rem;flex:1;">
+                  <div style="background:rgba(255,255,255,0.04);padding:0.4rem;border:1px solid rgba(255,255,255,0.07);">
+                    <div style="font-family:'IBM Plex Mono',monospace;font-size:0.55rem;color:#a094c8;margin-bottom:0.2rem;">USUÁRIOS</div>
+                    <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:900;color:#f4f0ff;">3</div>
+                  </div>
+                  <div style="background:rgba(255,255,255,0.04);padding:0.4rem;border:1px solid rgba(255,255,255,0.07);">
+                    <div style="font-family:'IBM Plex Mono',monospace;font-size:0.55rem;color:#a094c8;margin-bottom:0.2rem;">PERGUNTAS</div>
+                    <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:900;color:#f4f0ff;">30</div>
+                  </div>
+                </div>
+                <div class="gami-case-screen-label" style="color:#a094c8;">Painel Admin</div>
+              </div>
+            </div>
+            <!-- Mock do perfil -->
+            <div class="gami-case-screen">
+              <div class="gami-screen-mock">
+                <div style="display:flex;flex-direction:column;align-items:center;flex:1;gap:0.4rem;justify-content:center;">
+                  <div style="width:28px;height:28px;border-radius:50%;background:#2563eb;opacity:0.7;border:2px solid rgba(232,24,109,0.4);"></div>
+                  <div class="gami-screen-bar" style="width:50%;height:5px;"></div>
+                  <div style="display:flex;gap:0.8rem;margin-top:0.3rem;">
+                    <div style="display:flex;flex-direction:column;align-items:center;gap:0.2rem;">
+                      <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:900;color:#f59e0b;">750</div>
+                      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.45rem;color:#a094c8;">PTS</div>
+                    </div>
+                    <div style="display:flex;flex-direction:column;align-items:center;gap:0.2rem;">
+                      <div style="font-family:'Barlow Condensed',sans-serif;font-size:0.9rem;font-weight:900;color:#e8186d;">4</div>
+                      <div style="font-family:'IBM Plex Mono',monospace;font-size:0.45rem;color:#a094c8;">VIDAS</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="gami-case-screen-label">Perfil do Jogador</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PARA QUEM É ── -->
+    <section class="gami-segments">
+      <div class="sec-header reveal">
+        <span class="sec-label">Para quem é</span>
+        <span class="sec-tag">Segmentos</span>
+      </div>
+      <div class="gami-segments-grid">
+        <div class="gami-segment reveal d1">
+          <span class="gami-segment-icon">🏢</span>
+          <div class="gami-segment-title">RH &amp; T&amp;D</div>
+          <div class="gami-segment-desc">Onboarding de novos colaboradores, integração cultural e política interna — sem slides e sem abandono.</div>
+        </div>
+        <div class="gami-segment reveal d2">
+          <span class="gami-segment-icon">🔑</span>
+          <div class="gami-segment-title">Facilities &amp; Sede Nova</div>
+          <div class="gami-segment-desc">Inaugurações, mudanças de sede, novos layouts — apresente o espaço como uma missão a ser explorada.</div>
+        </div>
+        <div class="gami-segment reveal d3">
+          <span class="gami-segment-icon">⚖️</span>
+          <div class="gami-segment-title">Compliance</div>
+          <div class="gami-segment-desc">Políticas de conduta, LGPD, saúde e segurança — conteúdo obrigatório que o time vai querer completar.</div>
+        </div>
+        <div class="gami-segment reveal d4">
+          <span class="gami-segment-icon">🌱</span>
+          <div class="gami-segment-title">Cultura Organizacional</div>
+          <div class="gami-segment-desc">Valores, missão, rituais internos — transforme cultura em algo que o colaborador experiencia, não apenas lê.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DIFERENCIAL TÉCNICO ── -->
+    <section class="gami-tech">
+      <div class="sec-header reveal">
+        <span class="sec-label">Diferencial técnico</span>
+        <span class="sec-tag">Plataforma white-label</span>
+      </div>
+      <div class="gami-tech-grid">
+        <div class="gami-tech-item reveal d1">
+          <span class="gami-tech-check">01 //</span>
+          <div class="gami-tech-text">
+            <span class="gami-tech-name">White-label completo</span>
+            <span class="gami-tech-detail">Identidade visual da sua empresa. Nome, cores, logo e tom de voz — nada de "powered by" visível.</span>
+          </div>
+        </div>
+        <div class="gami-tech-item reveal d2">
+          <span class="gami-tech-check">02 //</span>
+          <div class="gami-tech-text">
+            <span class="gami-tech-name">Admin sem código</span>
+            <span class="gami-tech-detail">RH edita perguntas, fases e usuários direto no painel. Nenhuma alteração depende de desenvolvedor.</span>
+          </div>
+        </div>
+        <div class="gami-tech-item reveal d3">
+          <span class="gami-tech-check">03 //</span>
+          <div class="gami-tech-text">
+            <span class="gami-tech-name">Banco de perguntas ilimitado</span>
+            <span class="gami-tech-detail">Cadastre quantas questões quiser, organize por semana ou fase, ative e desative sem afetar o histórico.</span>
+          </div>
+        </div>
+        <div class="gami-tech-item reveal d1">
+          <span class="gami-tech-check">04 //</span>
+          <div class="gami-tech-text">
+            <span class="gami-tech-name">Ranking &amp; perfil em tempo real</span>
+            <span class="gami-tech-detail">Dashboard de engajamento, top performers, perguntas com mais erros — tudo atualizado ao vivo.</span>
+          </div>
+        </div>
+        <div class="gami-tech-item reveal d2">
+          <span class="gami-tech-check">05 //</span>
+          <div class="gami-tech-text">
+            <span class="gami-tech-name">Controle de acesso por aprovação</span>
+            <span class="gami-tech-detail">Novos usuários aguardam aprovação do admin. Ideal para ambientes corporativos com SSO ou convite.</span>
+          </div>
+        </div>
+        <div class="gami-tech-item reveal d3">
+          <span class="gami-tech-check">06 //</span>
+          <div class="gami-tech-text">
+            <span class="gami-tech-name">Deploy em até 6 semanas</span>
+            <span class="gami-tech-detail">Da reunião de briefing à plataforma em produção. Já testamos e refinamos o processo com cliente real.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FORMULÁRIO DIAGNÓSTICO ── -->
+    <section class="gami-form-section" id="diagnostico">
+      <div class="gami-form-left reveal">
+        <p class="gami-antiobj-label" style="margin-bottom:0.8rem;">Dê o primeiro passo</p>
+        <h2 class="gami-form-left-title">
+          Diagnóstico<br /><em>gratuito</em>
+        </h2>
+        <p class="gami-form-left-desc">
+          Responda 5 perguntas e entenda se gamificação é o caminho certo para o seu momento — sem compromisso, sem pitch de venda imediato.
+        </p>
+        <div class="gami-form-steps">
+          <div class="gami-form-step">
+            <span class="gami-form-step-num">1</span>
+            <span class="gami-form-step-text">Você preenche o formulário com o contexto do seu desafio</span>
+          </div>
+          <div class="gami-form-step">
+            <span class="gami-form-step-num">2</span>
+            <span class="gami-form-step-text">Recebe uma análise de viabilidade imediata na tela</span>
+          </div>
+          <div class="gami-form-step">
+            <span class="gami-form-step-num">3</span>
+            <span class="gami-form-step-text">Se fizer sentido, agendamos 30 minutos para avançar</span>
+          </div>
+        </div>
+      </div>
+      <div class="gami-form-right reveal d2">
+        <form class="gami-form" id="gami-diag-form" novalidate>
+
+          <div class="gami-form-row">
+            <div class="gami-form-group">
+              <label class="gami-form-label" for="f-empresa">Empresa</label>
+              <input type="text" id="f-empresa" placeholder="Nome da empresa" required />
+            </div>
+            <div class="gami-form-group">
+              <label class="gami-form-label" for="f-setor">Setor</label>
+              <input type="text" id="f-setor" placeholder="Ex: Saúde, Varejo, TI..." required />
+            </div>
+          </div>
+
+          <div class="gami-form-group">
+            <label class="gami-form-label" for="f-tamanho">Tamanho do time impactado</label>
+            <select id="f-tamanho" required>
+              <option value="" disabled selected>Selecione uma faixa</option>
+              <option value="10-50">10 a 50 pessoas</option>
+              <option value="51-200">51 a 200 pessoas</option>
+              <option value="201-500">201 a 500 pessoas</option>
+              <option value="500+">Mais de 500 pessoas</option>
+            </select>
+          </div>
+
+          <div class="gami-form-group">
+            <label class="gami-form-label" for="f-objetivo">O que você quer gamificar?</label>
+            <select id="f-objetivo" required>
+              <option value="" disabled selected>Selecione o processo</option>
+              <option value="onboarding">Onboarding de novos colaboradores</option>
+              <option value="compliance">Compliance / política interna</option>
+              <option value="cultura">Cultura organizacional / valores</option>
+              <option value="sede">Inauguração ou mudança de sede</option>
+              <option value="treinamento">Treinamento técnico / produto</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="gami-form-group">
+            <label class="gami-form-label" for="f-situacao">Como está esse processo hoje?</label>
+            <select id="f-situacao">
+              <option value="" disabled selected>Selecione a situação atual</option>
+              <option value="nao-existe">Não existe processo formal</option>
+              <option value="existe-baixo">Existe, mas com baixo engajamento</option>
+              <option value="existe-abandono">Existe, mas ninguém conclui</option>
+              <option value="existe-funciona">Existe e funciona, quero melhorar</option>
+            </select>
+          </div>
+
+          <div class="gami-form-row">
+            <div class="gami-form-group">
+              <label class="gami-form-label" for="f-prazo">Quando precisaria estar pronto?</label>
+              <select id="f-prazo">
+                <option value="" disabled selected>Selecione</option>
+                <option value="30d">Em até 30 dias</option>
+                <option value="3m">Em até 3 meses</option>
+                <option value="sem-prazo">Sem prazo definido</option>
+              </select>
+            </div>
+            <div class="gami-form-group">
+              <label class="gami-form-label" for="f-orcamento">Situação do orçamento</label>
+              <select id="f-orcamento">
+                <option value="" disabled selected>Selecione</option>
+                <option value="aprovado">Orçamento aprovado</option>
+                <option value="pesquisa">Ainda em fase de pesquisa</option>
+                <option value="indefinido">Preciso de ajuda para justificar</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="gami-form-group">
+            <label class="gami-form-label" for="f-email">Seu e-mail para contato</label>
+            <input type="email" id="f-email" placeholder="voce@empresa.com.br" required />
+          </div>
+
+          <button type="submit" class="btn-pink" style="align-self:flex-start;margin-top:0.5rem;">
+            Enviar diagnóstico →
+          </button>
+
+          <div class="gami-form-result" id="gami-form-result">
+            <strong>Diagnóstico recebido.</strong> Seu perfil indica viabilidade para uma jornada gamificada — a estrutura do seu processo é exatamente o tipo de desafio que já resolvemos. Entraremos em contato em até 24h para agendar 30 minutos. Se preferir agilizar: <a href="mailto:contato@netdev.systems" style="color:var(--pink)">contato@netdev.systems</a>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- ── DEMO INTERATIVA ── -->
+    <section class="gami-demo">
+      <div class="reveal">
+        <p class="gami-demo-label">Experiência ao vivo</p>
+        <h2 class="gami-demo-title">
+          Jogue antes<br />de <em>decidir.</em>
+        </h2>
+        <p class="gami-demo-desc">
+          A melhor forma de entender se gamificação funciona para o seu time é sentir na pele. Acesse o ambiente demo da Missão SESC e explore a plataforma como um colaborador real — jornada, ranking, vidas e tudo mais.
+        </p>
+      </div>
+      <div class="gami-demo-actions reveal d2">
+        <a href="#" class="btn-pink-lg" id="demo-btn" title="Em breve">
+          Acessar demo →
+        </a>
+        <span class="gami-demo-note">Demo interativa disponível em breve.<br />Acesso via login de visitante, sem cadastro.</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">&lt; netDev.systems /&gt;</div>
+      <div class="footer-links">
+        <a href="sobre.html">Sobre</a>
+        <a href="cases.html">Cases</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="gamificacao.html">Gamificação</a>
+        <a href="contato.html">Contato</a>
+      </div>
+      <div class="footer-copy">© 2026 NetDev Technology Group.</div>
+    </div>
+  </footer>
+
+  <!-- ═══ CONTROL PANEL ═══ -->
+  <div id="controls">
+    <div class="ctrl-panel">
+      <div class="ctrl-row">
+        <span class="ctrl-label">Modo Claro</span>
+        <label class="toggle">
+          <input type="checkbox" id="ctrl-toggle" />
+          <span class="toggle-track"></span>
+        </label>
+      </div>
+      <div class="ctrl-row">
+        <span class="ctrl-label">Intensidade da Cor</span>
+        <div class="ctrl-pink-preview" id="ctrl-preview"></div>
+      </div>
+      <div class="ctrl-row">
+        <input type="range" class="ctrl-slider" id="ctrl-slider" min="0" max="100" value="50" />
+      </div>
+    </div>
+  </div>
+
+  <script src="js/tron.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Formulário diagnóstico
+    document.getElementById('gami-diag-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const empresa = document.getElementById('f-empresa').value.trim();
+      const email = document.getElementById('f-email').value.trim();
+      const objetivo = document.getElementById('f-objetivo').value;
+      if (!empresa || !email || !objetivo) {
+        alert('Por favor, preencha ao menos empresa, e-mail e o processo que deseja gamificar.');
+        return;
+      }
+      const result = document.getElementById('gami-form-result');
+      result.classList.add('show');
+      result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      this.querySelector('button[type=submit]').disabled = true;
+      this.querySelector('button[type=submit]').textContent = 'Enviado ✓';
+    });
+
+    // Demo btn (placeholder até ter o link real)
+    document.getElementById('demo-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Demo interativa em breve! Por enquanto, solicite acesso via diagnóstico ou entre em contato.');
+    });
+  </script>
+</body>
+</html>
